@@ -2,11 +2,12 @@
 
 Disable/Enable LSP clients for buffers.
 
-![preview.gif](https://media.githubusercontent.com/media/adoyle-h/_imgs/master/github/lsp-toggle/preview.gif)
+![preview.gif](https://raw.githubusercontent.com/adoyle-h/_imgs/master/github/lsp-toggle/preview.gif)
 
 ## Dependencies
 
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): It is required.
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim): It is optional.
 - [telescope](https://github.com/nvim-telescope/telescope.nvim): It is optional.
 - [telescope-find-pickers.nvim](https://github.com/keyvchan/telescope-find-pickers.nvim): It is optional. If you use [telescope](https://github.com/nvim-telescope/telescope.nvim), it's highly recommended to install the plugin.
 
