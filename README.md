@@ -69,9 +69,6 @@ See [releases][].
 The versions follows the rules of SemVer 2.0.0.
 For more information on SemVer, please visit http://semver.org/ .
 
-## Other Projects
-- [adoyle-h/neovim-config](https://github.com/adoyle-h/neovim-config): You may be interested in my neovim config
-
 ## Copyright and License
 
 Copyright 2022 ADoyle (adoyle.h@gmail.com) Some Rights Reserved.
@@ -81,6 +78,10 @@ See the [LICENSE][] file for the specific language governing permissions and lim
 
 See the [NOTICE][] file distributed with this work for additional information regarding copyright ownership.
 
+## Other Projects
+
+- [adoyle-h/neovim-config](https://github.com/adoyle-h/neovim-config): You may be interested in my neovim config.
+- [Other lua projects](https://github.com/adoyle-h?tab=repositories&q=&type=source&language=lua&sort=stargazers) created by me.
 
 <!-- Links -->
 
