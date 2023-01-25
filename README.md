@@ -60,7 +60,7 @@ If telescope enabled, it will load two telescope extensions which named `ToggleL
 
 ## Suggestion, Bug Reporting, Contributing
 
-Any suggestions and contributions are always welcome. Please open an [issue][] to contact with me.
+Please read [./docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md) before opening new Issue/Discussion/PR and posting any comments.
 
 ## Versions
 
@@ -71,7 +71,7 @@ For more information on SemVer, please visit http://semver.org/ .
 
 ## Copyright and License
 
-Copyright 2022 ADoyle (adoyle.h@gmail.com) Some Rights Reserved.
+Copyright 2022-2023 ADoyle (adoyle.h@gmail.com) Some Rights Reserved.
 The project is licensed under the **Apache License Version 2.0**.
 
 See the [LICENSE][] file for the specific language governing permissions and limitations under the License.
@@ -80,7 +80,7 @@ See the [NOTICE][] file distributed with this work for additional information re
 
 ## Other Projects
 
-- [adoyle-h/neovim-config](https://github.com/adoyle-h/neovim-config): You may be interested in my neovim config.
+- [one.nvim](https://github.com/adoyle-h/one.nvim): All-in-one neovim configuration framework implemented with Lua.
 - [Other lua projects](https://github.com/adoyle-h?tab=repositories&q=&type=source&language=lua&sort=stargazers) created by me.
 
 <!-- Links -->
