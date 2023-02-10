@@ -78,6 +78,7 @@ See the [NOTICE][] file distributed with this work for additional information re
 ## Other Projects
 
 - [one.nvim](https://github.com/adoyle-h/one.nvim): All-in-one neovim configuration framework implemented with Lua.
+- [ad-telescope-extensions](https://github.com/adoyle-h/ad-telescope-extensions.nvim): A set of telescope extensions
 - [Other lua projects](https://github.com/adoyle-h?tab=repositories&q=&type=source&language=lua&sort=stargazers) created by me.
 
 
