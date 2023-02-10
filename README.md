@@ -11,6 +11,10 @@ Disable/Enable LSP clients for buffers.
 - [telescope](https://github.com/nvim-telescope/telescope.nvim): It is optional.
 - [telescope-find-pickers.nvim](https://github.com/keyvchan/telescope-find-pickers.nvim): It is optional. If you use [telescope](https://github.com/nvim-telescope/telescope.nvim), it's highly recommended to install the plugin.
 
+## Versions
+
+Read the [tags][]. The versions follows the rules of [SemVer 2.0.0](http://semver.org/).
+
 ## Installation
 
 ### Using vim-plug
@@ -60,18 +64,11 @@ If telescope enabled, it will load two telescope extensions which named `ToggleL
 
 ## Suggestion, Bug Reporting, Contributing
 
-Please read [./docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md) before opening new Issue/Discussion/PR and posting any comments.
-
-## Versions
-
-See [releases][].
-
-The versions follows the rules of SemVer 2.0.0.
-For more information on SemVer, please visit http://semver.org/ .
+**Before opening new Issue/Discussion/PR and posting any comments**, please read [Contributing Guidelines](https://gcg.adoyle.me/CONTRIBUTING).
 
 ## Copyright and License
 
-Copyright 2022-2023 ADoyle (adoyle.h@gmail.com) Some Rights Reserved.
+Copyright 2022-2023 ADoyle (adoyle.h@gmail.com). Some Rights Reserved.
 The project is licensed under the **Apache License Version 2.0**.
 
 See the [LICENSE][] file for the specific language governing permissions and limitations under the License.
@@ -83,9 +80,9 @@ See the [NOTICE][] file distributed with this work for additional information re
 - [one.nvim](https://github.com/adoyle-h/one.nvim): All-in-one neovim configuration framework implemented with Lua.
 - [Other lua projects](https://github.com/adoyle-h?tab=repositories&q=&type=source&language=lua&sort=stargazers) created by me.
 
+
 <!-- Links -->
 
 [LICENSE]: ./LICENSE
 [NOTICE]: ./NOTICE
-[releases]: https://github.com/adoyle-h/lsp-toggle.nvim/releases
-[issue]: https://github.com/adoyle-h/lsp-toggle.nvim/issues
+[tags]: https://github.com/adoyle-h/lsp-toggle.nvim/tags
