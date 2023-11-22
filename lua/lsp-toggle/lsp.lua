@@ -14,18 +14,18 @@ return {
 		local activeMap = {}
 		local list = vim.tbl_map(function(client)
 			activeMap[client.name] = true
-			return { text = ' ' .. client.name, client = client }
+			return { text = '󰄲 ' .. client.name, client = client }
 		end, clients)
 
 		local servers = lspconfig.util.available_servers()
 
-		if not activeMap['null-ls'] then list[#list + 1] = { text = ' null-ls', server = 'null-ls' } end
+		if not activeMap['null-ls'] then list[#list + 1] = { text = '󰄱 null-ls', server = 'null-ls' } end
 
 		for _, serverName in pairs(servers) do
 			if not activeMap[serverName] then
 				local server = lspconfig[serverName]
 				if (not server.filetypes) or vim.tbl_contains(server.filetypes, ft) then
-					list[#list + 1] = { text = ' ' .. serverName, server = server }
+					list[#list + 1] = { text = '󰄱 ' .. serverName, server = server }
 				end
 			end
 		end
