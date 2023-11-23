@@ -36,7 +36,7 @@ return {
 		-- }
 		for _, src in pairs(sources) do
 			if src.filetypes[ft] or src.filetypes._all then
-				local available = S.is_available(src, ft) and '' or ''
+				local available = S.is_available(src, ft) and '󰄲' or '󰄱'
 				local methods = vim.fn.join(vim.tbl_keys(src.methods), ',')
 				table.insert(results,
 					{ text = printf('%s %s (%s)', available, src.name, methods), src = src, ft = ft })
