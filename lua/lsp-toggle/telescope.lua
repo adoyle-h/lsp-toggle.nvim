@@ -3,6 +3,7 @@ local M = {}
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local action_utils = require 'telescope.actions.utils'
 local pickers = require('telescope.pickers')
 local finders = require('telescope.finders')
 local action_state = require('telescope.actions.state')
@@ -33,10 +34,20 @@ function M.extCallback(ext, opts)
 		wrap_results = true,
 		attach_mappings = function(prompt_bufnr, map)
 			actions.select_default:replace(function()
+				local selections = {}
+				action_utils.map_selections(prompt_bufnr, function(selection)
+					local item = items[selection.index]
+					table.insert(selections, item)
+				end)
 				actions.close(prompt_bufnr)
-				local selection = action_state.get_selected_entry()
-				local item = items[selection.index]
-				if ext.onSubmit then ext.onSubmit(item) end
+
+				if #selections > 0 then
+					if ext.onSubmit then ext.onSubmit(selections) end
+				else
+					local selection = action_state.get_selected_entry()
+					local item = items[selection.index]
+					if ext.onSubmit then ext.onSubmit(item) end
+				end
 			end)
 
 			return true

@@ -33,21 +33,29 @@ return {
 		return list
 	end,
 
-	onSubmit = function(selection)
+	onSubmit = function(item)
 		local buf = vim.api.nvim_get_current_buf()
 
-		if selection.client then
-			local clientId = selection.client.id
-			vim.lsp.buf_detach_client(buf, clientId)
-			vim.lsp.util.buf_clear_references(buf)
-		else
-			local server = selection.server
-
-			if server == 'null-ls' then
-				require('null-ls.client').try_add()
+		local function handle(selection)
+			if selection.client then
+				local clientId = selection.client.id
+				vim.lsp.buf_detach_client(buf, clientId)
+				vim.lsp.util.buf_clear_references(buf)
 			else
-				server.manager.try_add(buf)
+				local server = selection.server
+
+				if server == 'null-ls' then
+					require('null-ls.client').try_add(buf)
+				else
+					server.manager:try_add(buf)
+				end
 			end
+		end
+
+		if vim.islist(item) then
+			for _, selection in ipairs(item) do handle(selection) end
+		else
+			handle(item)
 		end
 	end,
 
