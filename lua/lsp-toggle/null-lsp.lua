@@ -48,19 +48,27 @@ return {
 
 	onSubmit = function(item)
 		local nullLS = require('null-ls')
-		local src = item.src
 		local S = require('null-ls.sources')
 
-		if S.is_available(src, item.ft) then
-			nullLS.disable({ id = src.id })
-			vim.schedule(function()
-				print(printf('NullLS "%s" disabled', src.name))
-			end)
+		local function handle(selection)
+			local src = selection.src
+			if S.is_available(src, item.ft) then
+				nullLS.disable({ id = src.id })
+				vim.schedule(function()
+					print(printf('NullLS "%s" disabled', src.name))
+				end)
+			else
+				nullLS.enable({ id = src.id })
+				vim.schedule(function()
+					print(printf('NullLS "%s" enabled', src.name))
+				end)
+			end
+		end
+
+		if vim.islist(item) then
+			for _, selection in ipairs(item) do handle(selection) end
 		else
-			nullLS.enable({ id = src.id })
-			vim.schedule(function()
-				print(printf('NullLS "%s" enabled', src.name))
-			end)
+			handle(item)
 		end
 	end,
 
