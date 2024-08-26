@@ -68,7 +68,7 @@ If telescope enabled, it will load two telescope extensions which named `ToggleL
 
 ## Copyright and License
 
-Copyright 2022-2023 ADoyle (adoyle.h@gmail.com). Some Rights Reserved.
+Copyright 2022-2024 ADoyle (adoyle.h@gmail.com). Some Rights Reserved.
 The project is licensed under the **Apache License Version 2.0**.
 
 See the [LICENSE][] file for the specific language governing permissions and limitations under the License.
@@ -78,6 +78,7 @@ See the [NOTICE][] file distributed with this work for additional information re
 ## Other Projects
 
 - [one.nvim](https://github.com/adoyle-h/one.nvim): All-in-one neovim configuration framework implemented with Lua.
+- [telescope-extension-maker.nvim](https://github.com/adoyle-h/telescope-extension-maker.nvim): Easy to make a telescope extension
 - [ad-telescope-extensions](https://github.com/adoyle-h/ad-telescope-extensions.nvim): A set of telescope extensions
 - [Other lua projects](https://github.com/adoyle-h?tab=repositories&q=&type=source&language=lua&sort=stargazers) created by me.
 
