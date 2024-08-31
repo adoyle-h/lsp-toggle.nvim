@@ -22,17 +22,23 @@ local function autoStartLSP(server)
 end
 
 local function makeCommand(ext)
-	vim.api.nvim_create_user_command(ext.name, function()
+	local name = ext.name
+	vim.api.nvim_create_user_command(name, function()
 		local items = ext.command()
 
-		vim.ui.select(items, {
-			prompt = ext.name,
-			format_item = function(item)
-				return item.text
-			end,
-		}, function(selection)
-			if selection then ext.onSubmit(selection) end
-		end)
+		local ok, telescope = pcall(require, 'telescope')
+		if ok then
+			telescope.extensions[name][name]()
+		else
+			vim.ui.select(items, {
+				prompt = name,
+				format_item = function(item)
+					return item.text
+				end,
+			}, function(selection)
+				if selection then ext.onSubmit(selection) end
+			end)
+		end
 	end, { desc = ext.desc })
 end
 
@@ -65,7 +71,6 @@ function M.setup(opts)
 				'[lsp-toggle] Not found telescope. If you don\'t want load telescope extensions, please set opts.telescope=false.')
 		end
 	end
-
 end
 
 return M
