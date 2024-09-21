@@ -16,7 +16,7 @@ return {
 			local S = require('null-ls.sources')
 		end
 
-		if not nullLS then
+		if not nullLS_present then
 			print('Neither null-ls nor none-ls present')
 			return {}
 		end
