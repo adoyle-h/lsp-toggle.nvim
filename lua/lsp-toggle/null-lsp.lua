@@ -6,8 +6,21 @@ return {
 	desc = 'Disable/Enable NullLS source for all buffers',
 
 	command = function()
-		local nullLS = require('null-ls')
-		local S = require('null-ls.sources')
+		local nullLS_present, nullLS = pcall(require, 'null-ls')
+		if not nullLS_present then
+			nullLS_present, nullLS = pcall(require, 'none-ls')
+			if nullLS_present then
+				local S = require('none-ls.sources')
+			end
+		else
+			local S = require('null-ls.sources')
+		end
+
+		if not nullLS_present then
+			print('Neither null-ls nor none-ls present')
+			return {}
+		end
+
 		local sources = nullLS.get_sources()
 		local ft = vim.o.ft
 		local results = {}
