@@ -1,5 +1,9 @@
 local M = {}
 
+
+-- check if null-ls is installed, since it's optional
+local has_null_lsp, _ = pcall(require, 'null-ls')
+
 local toggleLSP = require('lsp-toggle.lsp')
 local toggleNullLSP = require('lsp-toggle.null-lsp')
 
@@ -58,14 +62,18 @@ function M.setup(opts)
 
 	if opts.create_cmds then
 		makeCommand(toggleLSP)
-		makeCommand(toggleNullLSP)
+		if has_null_lsp then
+			makeCommand(toggleNullLSP)
+		end
 	end
 
 	if opts.telescope then
 		local ok, telescope = pcall(require, 'telescope')
 		if ok then
 			telescope.load_extension(toggleLSP.name)
-			telescope.load_extension(toggleNullLSP.name)
+			if has_null_lsp then
+				telescope.load_extension(toggleNullLSP.name)
+			end
 		else
 			error(
 				'[lsp-toggle] Not found telescope. If you don\'t want load telescope extensions, please set opts.telescope=false.')
